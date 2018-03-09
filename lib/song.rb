@@ -93,7 +93,7 @@ class Song
     file_arr = filename.split(" - ")
     song = Song.create_by_name(file_arr[1])
     song.artist_name = file_arr[0]
-    song    
+    song
   end
 
 end
