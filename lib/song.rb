@@ -29,9 +29,9 @@
 #     self.class.find_by_name || self.class.create_by_name
 #   end
 #
-#   def self.alphabetical
-#     songs = self.class.all.select{|s| s.name}.sort
-#   end
+  # def self.alphabetical
+  #   songs = self.class.all.select{|s| s.name}.sort
+  # end
 # end
 
 
@@ -72,6 +72,10 @@ class Song
 
   def self.find_or_create_by_name(name)
     self.find_by_name(name) || self.create_by_name(name)
+  end
+
+  def self.alphabetical
+    songs = self.all.select{|s| s.name}.sort
   end
 
 end
