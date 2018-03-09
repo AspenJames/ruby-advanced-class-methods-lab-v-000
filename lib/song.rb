@@ -50,8 +50,6 @@ class Song
 
   def self.create
     song = Song.new
-    self.save
-    song
   end
 
 end
