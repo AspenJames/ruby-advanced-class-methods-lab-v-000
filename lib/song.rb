@@ -80,4 +80,12 @@ class Song
     songs.collect{|s| Song.find_by_name(s)}
   end
 
+  def self.new_from_filename(filename)
+    filename.chomp!(".mp3")
+    file_arr = filename.split(" - ")
+    song = Song.create_by_name(file_arr[1])
+    song.artist_name = file_arr[0]
+    song
+  end
+
 end
