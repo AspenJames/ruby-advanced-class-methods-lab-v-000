@@ -49,19 +49,19 @@ class Song
   end
 
   def self.create
-    song = Song.new
+    song = self.new
     song.save
     song
   end
 
   def self.new_by_name(name)
-    song = Song.new
+    song = self.new
     song.name = name
     song
   end
 
   def self.create_by_name(name)
-    song = Song.create
+    song = self.create
     song.name = name
     song
   end
@@ -83,7 +83,7 @@ class Song
   def self.new_from_filename(filename)
     filename.chomp!(".mp3")
     file_arr = filename.split(" - ")
-    song = Song.new_by_name(file_arr[1])
+    song = self.new_by_name(file_arr[1])
     song.artist_name = file_arr[0]
     song
   end
