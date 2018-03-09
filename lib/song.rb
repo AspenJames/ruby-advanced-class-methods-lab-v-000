@@ -77,6 +77,7 @@ class Song
   def self.alphabetical
     songs = self.all.collect{|s| s.name}
     songs.sort
+    songs.collect{|s| s.find_by_name}
   end
 
 end
